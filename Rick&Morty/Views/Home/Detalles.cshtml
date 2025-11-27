@@ -1,0 +1,14 @@
+@model Rick_Morty.Models.Personaje
+
+<h2>@Model.Nombre</h2>
+<hr />
+
+<img src="@Model.Imagen" width="250" style="border-radius:15px;" />
+
+<p><strong>ID:</strong> @Model.Id</p>
+<p><strong>Estado:</strong> @Model.Estado</p>
+<p><strong>Especie:</strong> @Model.Especie</p>
+<p><strong>Género:</strong> @Model.Genero</p>
+
+<br />
+<a href="@Url.Action("Index","Home")">← Volver a la lista</a>

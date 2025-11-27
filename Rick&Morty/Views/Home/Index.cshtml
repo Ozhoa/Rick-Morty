@@ -1,0 +1,21 @@
+@model List<Rick_Morty.Models.Personaje>
+
+<h2>Personajes de Rick &amp; Morty</h2>
+<hr />
+
+@if (!string.IsNullOrEmpty(ViewBag.Message as string))
+{
+    <div class="alert alert-danger">@ViewBag.Message</div>
+}
+
+<div style="display:flex; flex-wrap:wrap; gap:20px;">
+    @foreach (var p in Model)
+    {
+        <div style="width:180px; text-align:center; border:1px solid #ddd; padding:10px; border-radius:10px;">
+            <img src="@p.Imagen" width="150" style="border-radius:10px;" />
+            <h4>@p.Nombre</h4>
+            <p>@p.Especie - @p.Estado</p>
+            <a href="@Url.Action("Detalles","Home",new { id=p.Id })">Ver detalles</a>
+        </div>
+    }
+</div>
